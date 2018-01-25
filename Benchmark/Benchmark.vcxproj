@@ -19,47 +19,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\Thunder\Buffer.hpp" />
-    <ClInclude Include="include\Thunder\Camera.hpp" />
-    <ClInclude Include="include\Thunder\Device.hpp" />
-    <ClInclude Include="include\Thunder\EventHandler.hpp" />
-    <ClInclude Include="include\Thunder\Light.hpp" />
-    <ClInclude Include="include\Thunder\Mesh.hpp" />
-    <ClInclude Include="include\Thunder\Model.hpp" />
-    <ClInclude Include="include\Thunder\NodeComponent.hpp" />
-    <ClInclude Include="include\Thunder\SceneManager.hpp" />
-    <ClInclude Include="include\Thunder\SceneNode.hpp" />
-    <ClInclude Include="include\Thunder\Shader.hpp" />
-    <ClInclude Include="include\Thunder\ShaderProgram.hpp" />
-    <ClInclude Include="include\Thunder\Transform.hpp" />
-    <ClInclude Include="include\Thunder\VertexArray.hpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="sources\Buffer.cpp" />
-    <ClCompile Include="sources\Camera.cpp" />
-    <ClCompile Include="sources\Device.cpp" />
-    <ClCompile Include="sources\EventHandler.cpp" />
-    <ClCompile Include="sources\Light.cpp" />
-    <ClCompile Include="sources\Mesh.cpp" />
-    <ClCompile Include="sources\Model.cpp" />
-    <ClCompile Include="sources\NodeComponent.cpp" />
-    <ClCompile Include="sources\SceneManager.cpp" />
-    <ClCompile Include="sources\SceneNode.cpp" />
-    <ClCompile Include="sources\Shader.cpp" />
-    <ClCompile Include="sources\ShaderProgram.cpp" />
-    <ClCompile Include="sources\Transform.cpp" />
-    <ClCompile Include="sources\VertexArray.cpp" />
+    <ClCompile Include="source\main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{84BB4FEB-17C2-4244-95C9-30E671AD1E0C}</ProjectGuid>
+    <ProjectGuid>{882E2248-08D3-4C82-8B30-3965020A7CD6}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Thunder</RootNamespace>
+    <RootNamespace>Benchmark</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -104,14 +75,12 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)lib\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)lib\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -124,16 +93,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Libraries\SDL2\include;C:\Libraries\glm\glm;C:\Libraries\glew\include;C:\Libraries\assimp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Libraries\SDL2\include;C:\Libraries\glm\glm;C:\Libraries\glew\include;C:\Libraries\assimp\include;$(SolutionDir)Thunder\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Thunder.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
-    <Lib>
-      <AdditionalLibraryDirectories>C:\Libraries\SDL2\lib\x86;C:\Libraries\glew\lib\Release\Win32;C:\Libraries\assimp\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glew32.lib;SDL2.lib;assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
-    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -151,7 +118,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -159,13 +126,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Libraries\SDL2\include;C:\Libraries\glm\glm;C:\Libraries\glew\include;C:\Libraries\assimp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Libraries\SDL2\include;C:\Libraries\glm\glm;C:\Libraries\glew\include;C:\Libraries\assimp\include;$(SolutionDir)Thunder\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Thunder.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
