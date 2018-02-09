@@ -1,0 +1,194 @@
+\hypertarget{classthunder_1_1_transform}{}\section{thunder\+:\+:Transform Class Reference}
+\label{classthunder_1_1_transform}\index{thunder\+::\+Transform@{thunder\+::\+Transform}}
+
+
+{\ttfamily \#include $<$Transform.\+hpp$>$}
+
+Inheritance diagram for thunder\+:\+:Transform\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classthunder_1_1_transform}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classthunder_1_1_transform_a5c734aa44dc5ec997777a823f4945267}{Transform}} ()
+\item 
+\mbox{\hyperlink{classthunder_1_1_transform_ac52d02022697715e0aaa3ce7a2228921}{Transform}} (const glm\+::vec3 \&position, const glm\+::quat \&rotation, const glm\+::vec3 \&scale)
+\item 
+void \mbox{\hyperlink{classthunder_1_1_transform_a8fe28dfa249e9b20bdc41fb5831fe365}{set\+Scale}} (const glm\+::vec3 \&scale)
+\item 
+void \mbox{\hyperlink{classthunder_1_1_transform_a8b94987c46bf380b9507a880ec64f2cc}{set\+Scale}} (const float \&scale)
+\item 
+void \mbox{\hyperlink{classthunder_1_1_transform_a7ce46713d4f7b0f503b406634a9bd437}{set\+Position}} (const glm\+::vec3 \&position)
+\item 
+void \mbox{\hyperlink{classthunder_1_1_transform_a8ccebf81e7a314ffe11cf461e56a9f22}{set\+Rotation}} (const glm\+::vec3 \&axis, const float \&angle)
+\item 
+void \mbox{\hyperlink{classthunder_1_1_transform_a02c705563b8f94336f79bd3cd5cbea76}{move}} (const glm\+::vec3 \&relative)
+\item 
+void \mbox{\hyperlink{classthunder_1_1_transform_ae178b3c22200182a7694b83ec34a65f5}{rotate}} (const glm\+::vec3 \&axis, const float \&angle)
+\item 
+glm\+::vec3 \mbox{\hyperlink{classthunder_1_1_transform_af70a68891b7b9158f2a1c4f02ad057b0}{get\+Scale}} ()
+\item 
+glm\+::vec3 \mbox{\hyperlink{classthunder_1_1_transform_ac02987b10bd5f41890a23af03318c324}{get\+Position}} ()
+\item 
+glm\+::quat \mbox{\hyperlink{classthunder_1_1_transform_a7f846cbe6b4ce50cd5e22b8fdd51c1ad}{get\+Rotation}} ()
+\item 
+glm\+::mat4 \mbox{\hyperlink{classthunder_1_1_transform_a9fac68be9d4eef2ae3889cc35b6c7a54}{get\+Matrix}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class represents objects that can moving, rotating etc. \mbox{\hyperlink{classthunder_1_1_scene_node}{Scene\+Node}} or \mbox{\hyperlink{classthunder_1_1_camera}{Camera}} is \mbox{\hyperlink{classthunder_1_1_transform}{Transform}} objects too. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classthunder_1_1_transform_a5c734aa44dc5ec997777a823f4945267}\label{classthunder_1_1_transform_a5c734aa44dc5ec997777a823f4945267}} 
+\index{thunder\+::\+Transform@{thunder\+::\+Transform}!Transform@{Transform}}
+\index{Transform@{Transform}!thunder\+::\+Transform@{thunder\+::\+Transform}}
+\subsubsection{\texorpdfstring{Transform()}{Transform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily thunder\+::\+Transform\+::\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Setting position and scale as (0, 0, 0) and (1, 1, 1) \mbox{\Hypertarget{classthunder_1_1_transform_ac52d02022697715e0aaa3ce7a2228921}\label{classthunder_1_1_transform_ac52d02022697715e0aaa3ce7a2228921}} 
+\index{thunder\+::\+Transform@{thunder\+::\+Transform}!Transform@{Transform}}
+\index{Transform@{Transform}!thunder\+::\+Transform@{thunder\+::\+Transform}}
+\subsubsection{\texorpdfstring{Transform()}{Transform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily thunder\+::\+Transform\+::\+Transform (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{position,  }\item[{const glm\+::quat \&}]{rotation,  }\item[{const glm\+::vec3 \&}]{scale }\end{DoxyParamCaption})}
+
+Setting all properties
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Poisition of Transfrom \\
+\hline
+{\em rotation} & Rotation of \mbox{\hyperlink{classthunder_1_1_transform}{Transform}} \\
+\hline
+{\em scale} & Scale of \mbox{\hyperlink{classthunder_1_1_transform}{Transform}} \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classthunder_1_1_transform_a9fac68be9d4eef2ae3889cc35b6c7a54}\label{classthunder_1_1_transform_a9fac68be9d4eef2ae3889cc35b6c7a54}} 
+\index{thunder\+::\+Transform@{thunder\+::\+Transform}!get\+Matrix@{get\+Matrix}}
+\index{get\+Matrix@{get\+Matrix}!thunder\+::\+Transform@{thunder\+::\+Transform}}
+\subsubsection{\texorpdfstring{get\+Matrix()}{getMatrix()}}
+{\footnotesize\ttfamily glm\+::mat4 thunder\+::\+Transform\+::get\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Multiplied matrices of position, rotation and scale 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classthunder_1_1_transform_ac02987b10bd5f41890a23af03318c324}\label{classthunder_1_1_transform_ac02987b10bd5f41890a23af03318c324}} 
+\index{thunder\+::\+Transform@{thunder\+::\+Transform}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!thunder\+::\+Transform@{thunder\+::\+Transform}}
+\subsubsection{\texorpdfstring{get\+Position()}{getPosition()}}
+{\footnotesize\ttfamily glm\+::vec3 thunder\+::\+Transform\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Position of \mbox{\hyperlink{classthunder_1_1_transform}{Transform}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classthunder_1_1_transform_a7f846cbe6b4ce50cd5e22b8fdd51c1ad}\label{classthunder_1_1_transform_a7f846cbe6b4ce50cd5e22b8fdd51c1ad}} 
+\index{thunder\+::\+Transform@{thunder\+::\+Transform}!get\+Rotation@{get\+Rotation}}
+\index{get\+Rotation@{get\+Rotation}!thunder\+::\+Transform@{thunder\+::\+Transform}}
+\subsubsection{\texorpdfstring{get\+Rotation()}{getRotation()}}
+{\footnotesize\ttfamily glm\+::quat thunder\+::\+Transform\+::get\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Rotation of \mbox{\hyperlink{classthunder_1_1_transform}{Transform}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classthunder_1_1_transform_af70a68891b7b9158f2a1c4f02ad057b0}\label{classthunder_1_1_transform_af70a68891b7b9158f2a1c4f02ad057b0}} 
+\index{thunder\+::\+Transform@{thunder\+::\+Transform}!get\+Scale@{get\+Scale}}
+\index{get\+Scale@{get\+Scale}!thunder\+::\+Transform@{thunder\+::\+Transform}}
+\subsubsection{\texorpdfstring{get\+Scale()}{getScale()}}
+{\footnotesize\ttfamily glm\+::vec3 thunder\+::\+Transform\+::get\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Scale of \mbox{\hyperlink{classthunder_1_1_transform}{Transform}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classthunder_1_1_transform_a02c705563b8f94336f79bd3cd5cbea76}\label{classthunder_1_1_transform_a02c705563b8f94336f79bd3cd5cbea76}} 
+\index{thunder\+::\+Transform@{thunder\+::\+Transform}!move@{move}}
+\index{move@{move}!thunder\+::\+Transform@{thunder\+::\+Transform}}
+\subsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void thunder\+::\+Transform\+::move (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{relative }\end{DoxyParamCaption})}
+
+Moving \mbox{\hyperlink{classthunder_1_1_transform}{Transform}} (curent position + relative position)
+
+
+\begin{DoxyParams}{Parameters}
+{\em relative} & Relative position to move \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classthunder_1_1_transform_ae178b3c22200182a7694b83ec34a65f5}\label{classthunder_1_1_transform_ae178b3c22200182a7694b83ec34a65f5}} 
+\index{thunder\+::\+Transform@{thunder\+::\+Transform}!rotate@{rotate}}
+\index{rotate@{rotate}!thunder\+::\+Transform@{thunder\+::\+Transform}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily void thunder\+::\+Transform\+::rotate (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{axis,  }\item[{const float \&}]{angle }\end{DoxyParamCaption})}
+
+Rotating \mbox{\hyperlink{classthunder_1_1_transform}{Transform}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & Axis to rotate \\
+\hline
+{\em angle} & Angle of rotation \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classthunder_1_1_transform_a7ce46713d4f7b0f503b406634a9bd437}\label{classthunder_1_1_transform_a7ce46713d4f7b0f503b406634a9bd437}} 
+\index{thunder\+::\+Transform@{thunder\+::\+Transform}!set\+Position@{set\+Position}}
+\index{set\+Position@{set\+Position}!thunder\+::\+Transform@{thunder\+::\+Transform}}
+\subsubsection{\texorpdfstring{set\+Position()}{setPosition()}}
+{\footnotesize\ttfamily void thunder\+::\+Transform\+::set\+Position (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{position }\end{DoxyParamCaption})}
+
+Setting position of \mbox{\hyperlink{classthunder_1_1_transform}{Transform}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position of \mbox{\hyperlink{classthunder_1_1_transform}{Transform}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classthunder_1_1_transform_a8ccebf81e7a314ffe11cf461e56a9f22}\label{classthunder_1_1_transform_a8ccebf81e7a314ffe11cf461e56a9f22}} 
+\index{thunder\+::\+Transform@{thunder\+::\+Transform}!set\+Rotation@{set\+Rotation}}
+\index{set\+Rotation@{set\+Rotation}!thunder\+::\+Transform@{thunder\+::\+Transform}}
+\subsubsection{\texorpdfstring{set\+Rotation()}{setRotation()}}
+{\footnotesize\ttfamily void thunder\+::\+Transform\+::set\+Rotation (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{axis,  }\item[{const float \&}]{angle }\end{DoxyParamCaption})}
+
+Setting rotation of \mbox{\hyperlink{classthunder_1_1_transform}{Transform}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & Axis to rotate \\
+\hline
+{\em angle} & Angle to rotate in given axis \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classthunder_1_1_transform_a8fe28dfa249e9b20bdc41fb5831fe365}\label{classthunder_1_1_transform_a8fe28dfa249e9b20bdc41fb5831fe365}} 
+\index{thunder\+::\+Transform@{thunder\+::\+Transform}!set\+Scale@{set\+Scale}}
+\index{set\+Scale@{set\+Scale}!thunder\+::\+Transform@{thunder\+::\+Transform}}
+\subsubsection{\texorpdfstring{set\+Scale()}{setScale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void thunder\+::\+Transform\+::set\+Scale (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{scale }\end{DoxyParamCaption})}
+
+Setting scale of \mbox{\hyperlink{classthunder_1_1_transform}{Transform}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & Scale of \mbox{\hyperlink{classthunder_1_1_transform}{Transform}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classthunder_1_1_transform_a8b94987c46bf380b9507a880ec64f2cc}\label{classthunder_1_1_transform_a8b94987c46bf380b9507a880ec64f2cc}} 
+\index{thunder\+::\+Transform@{thunder\+::\+Transform}!set\+Scale@{set\+Scale}}
+\index{set\+Scale@{set\+Scale}!thunder\+::\+Transform@{thunder\+::\+Transform}}
+\subsubsection{\texorpdfstring{set\+Scale()}{setScale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void thunder\+::\+Transform\+::set\+Scale (\begin{DoxyParamCaption}\item[{const float \&}]{scale }\end{DoxyParamCaption})}
+
+Setting scale of \mbox{\hyperlink{classthunder_1_1_transform}{Transform}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & Scale of \mbox{\hyperlink{classthunder_1_1_transform}{Transform}} \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Thunder/include/\+Thunder/Transform.\+hpp\end{DoxyCompactItemize}

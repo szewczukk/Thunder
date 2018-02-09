@@ -1,0 +1,197 @@
+\hypertarget{classthunder_1_1_scene_node}{}\section{thunder\+:\+:Scene\+Node Class Reference}
+\label{classthunder_1_1_scene_node}\index{thunder\+::\+Scene\+Node@{thunder\+::\+Scene\+Node}}
+
+
+{\ttfamily \#include $<$Scene\+Node.\+hpp$>$}
+
+Inheritance diagram for thunder\+:\+:Scene\+Node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classthunder_1_1_scene_node}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classthunder_1_1_scene_node_a78be890be6717725fa46c5cad58e7f44}{Scene\+Node}} (const std\+::string \&name)
+\item 
+\mbox{\hyperlink{classthunder_1_1_scene_node_ab9beda2e6774d2d209364c891acebc1f}{Scene\+Node}} (const std\+::string \&name, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classthunder_1_1_scene_node}{Scene\+Node}} $>$ parent)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classthunder_1_1_scene_node}{Scene\+Node}} $>$ \mbox{\hyperlink{classthunder_1_1_scene_node_abf763f599246d735a8a7f14992366d80}{create\+Child\+Node}} (const std\+::string \&name)
+\item 
+void \mbox{\hyperlink{classthunder_1_1_scene_node_ae14866fcd4a88c33d8f01f6ada14fdbc}{destroy\+Children}} (const std\+::string \&name)
+\item 
+{\footnotesize template$<$class T , class... \+\_\+\+Types$>$ }\\void \mbox{\hyperlink{classthunder_1_1_scene_node_a2a45fdece02c7ae3ae62805054f63ae1}{append\+Object}} (\+\_\+\+Types \&\&...args)
+\item 
+{\footnotesize template$<$class T $>$ }\\std\+::shared\+\_\+ptr$<$ T $>$ \mbox{\hyperlink{classthunder_1_1_scene_node_a2e50c38a3273b593be7ffaee9e057ae0}{get\+Object}} ()
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{classthunder_1_1_scene_node_aab9414b8a91d75d10e99337312c8b767}{destroy\+Object}} ()
+\item 
+void \mbox{\hyperlink{classthunder_1_1_scene_node_a9f3165c5da1789dee03d9a89b7164463}{draw}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classthunder_1_1_shader_program}{Shader\+Program}} $>$ shader\+Program)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classthunder_1_1_scene_manager}{Scene\+Manager}} $>$ \mbox{\hyperlink{classthunder_1_1_scene_node_aa4da20b8a7369dcb4b2ac262c3701849}{get\+Scene\+Manager}} ()
+\item 
+void \mbox{\hyperlink{classthunder_1_1_scene_node_a530678fd497174c7409b67d372dd12ed}{set\+Scene\+Manager}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classthunder_1_1_scene_manager}{Scene\+Manager}} $>$ scene\+Manager)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classthunder_1_1_scene_node}{Scene\+Node}} $>$ \mbox{\hyperlink{classthunder_1_1_scene_node_a40697be350194752846a29c97f1337b7}{get\+Parent}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{classthunder_1_1_scene_node}{Scene\+Node}} can representing all objects in Game like \mbox{\hyperlink{classthunder_1_1_camera}{Camera}}, \mbox{\hyperlink{classthunder_1_1_model}{Model}} and others. To create new Node you have to add children of root node in \mbox{\hyperlink{classthunder_1_1_scene_manager}{Scene\+Manager}} class. (\mbox{\hyperlink{classthunder_1_1_scene_manager_a3cc5d2cbec1cb527ef71895c1ced1081}{Scene\+Manager\+::get\+Root\+Node}} and \mbox{\hyperlink{classthunder_1_1_scene_node_abf763f599246d735a8a7f14992366d80}{Scene\+Node\+::create\+Child\+Node}}) {\ttfamily auto player\+Node = scene\+Manager-\/$>$get\+Root\+Node()-\/$>$create\+Child\+Node(\char`\"{}player\char`\"{});} 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classthunder_1_1_scene_node_a78be890be6717725fa46c5cad58e7f44}\label{classthunder_1_1_scene_node_a78be890be6717725fa46c5cad58e7f44}} 
+\index{thunder\+::\+Scene\+Node@{thunder\+::\+Scene\+Node}!Scene\+Node@{Scene\+Node}}
+\index{Scene\+Node@{Scene\+Node}!thunder\+::\+Scene\+Node@{thunder\+::\+Scene\+Node}}
+\subsubsection{\texorpdfstring{Scene\+Node()}{SceneNode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily thunder\+::\+Scene\+Node\+::\+Scene\+Node (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+Setting name of Node and parent of this node (in this contructor there is no parent)
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of Node \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classthunder_1_1_scene_node_ab9beda2e6774d2d209364c891acebc1f}\label{classthunder_1_1_scene_node_ab9beda2e6774d2d209364c891acebc1f}} 
+\index{thunder\+::\+Scene\+Node@{thunder\+::\+Scene\+Node}!Scene\+Node@{Scene\+Node}}
+\index{Scene\+Node@{Scene\+Node}!thunder\+::\+Scene\+Node@{thunder\+::\+Scene\+Node}}
+\subsubsection{\texorpdfstring{Scene\+Node()}{SceneNode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily thunder\+::\+Scene\+Node\+::\+Scene\+Node (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classthunder_1_1_scene_node}{Scene\+Node}} $>$}]{parent }\end{DoxyParamCaption})}
+
+Setting name of Node and parent of this node
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of Node \\
+\hline
+{\em parent} & Parent Node of this Node \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classthunder_1_1_scene_node_a2a45fdece02c7ae3ae62805054f63ae1}\label{classthunder_1_1_scene_node_a2a45fdece02c7ae3ae62805054f63ae1}} 
+\index{thunder\+::\+Scene\+Node@{thunder\+::\+Scene\+Node}!append\+Object@{append\+Object}}
+\index{append\+Object@{append\+Object}!thunder\+::\+Scene\+Node@{thunder\+::\+Scene\+Node}}
+\subsubsection{\texorpdfstring{append\+Object()}{appendObject()}}
+{\footnotesize\ttfamily template$<$class T , class... \+\_\+\+Types$>$ \\
+void thunder\+::\+Scene\+Node\+::append\+Object (\begin{DoxyParamCaption}\item[{\+\_\+\+Types \&\&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adding object with given type as Component of this Node Use this as {\ttfamily node-\/$>$append\+Object$<$\mbox{\hyperlink{classthunder_1_1_mesh}{Mesh}}$>$(vertices, elements);}. Parametres given is variadic template and will used in creating of Component as parametres
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of Component to add. Node will differentiate Component with given type \\
+\hline
+{\em \+\_\+\+Types} & Parametres of Component to create \\
+\hline
+\end{DoxyTemplParams}
+\mbox{\Hypertarget{classthunder_1_1_scene_node_abf763f599246d735a8a7f14992366d80}\label{classthunder_1_1_scene_node_abf763f599246d735a8a7f14992366d80}} 
+\index{thunder\+::\+Scene\+Node@{thunder\+::\+Scene\+Node}!create\+Child\+Node@{create\+Child\+Node}}
+\index{create\+Child\+Node@{create\+Child\+Node}!thunder\+::\+Scene\+Node@{thunder\+::\+Scene\+Node}}
+\subsubsection{\texorpdfstring{create\+Child\+Node()}{createChildNode()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classthunder_1_1_scene_node}{Scene\+Node}}$>$ thunder\+::\+Scene\+Node\+::create\+Child\+Node (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+Creating child of this node. Children are updating and drawing with parent node. Moving and rotating parent node is moving and rotating childern too
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of Node to create as child \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Modern pointer to created child 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classthunder_1_1_scene_node_ae14866fcd4a88c33d8f01f6ada14fdbc}\label{classthunder_1_1_scene_node_ae14866fcd4a88c33d8f01f6ada14fdbc}} 
+\index{thunder\+::\+Scene\+Node@{thunder\+::\+Scene\+Node}!destroy\+Children@{destroy\+Children}}
+\index{destroy\+Children@{destroy\+Children}!thunder\+::\+Scene\+Node@{thunder\+::\+Scene\+Node}}
+\subsubsection{\texorpdfstring{destroy\+Children()}{destroyChildren()}}
+{\footnotesize\ttfamily void thunder\+::\+Scene\+Node\+::destroy\+Children (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+Deleting child with given name
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of Node to destroy \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classthunder_1_1_scene_node_aab9414b8a91d75d10e99337312c8b767}\label{classthunder_1_1_scene_node_aab9414b8a91d75d10e99337312c8b767}} 
+\index{thunder\+::\+Scene\+Node@{thunder\+::\+Scene\+Node}!destroy\+Object@{destroy\+Object}}
+\index{destroy\+Object@{destroy\+Object}!thunder\+::\+Scene\+Node@{thunder\+::\+Scene\+Node}}
+\subsubsection{\texorpdfstring{destroy\+Object()}{destroyObject()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void thunder\+::\+Scene\+Node\+::destroy\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Destroying Component with given type of Component. Node will differentiate Component with type given in append\+Object method.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of Component to add. Node will differentiate Component with given type \\
+\hline
+\end{DoxyTemplParams}
+\mbox{\Hypertarget{classthunder_1_1_scene_node_a9f3165c5da1789dee03d9a89b7164463}\label{classthunder_1_1_scene_node_a9f3165c5da1789dee03d9a89b7164463}} 
+\index{thunder\+::\+Scene\+Node@{thunder\+::\+Scene\+Node}!draw@{draw}}
+\index{draw@{draw}!thunder\+::\+Scene\+Node@{thunder\+::\+Scene\+Node}}
+\subsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void thunder\+::\+Scene\+Node\+::draw (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classthunder_1_1_shader_program}{Shader\+Program}} $>$}]{shader\+Program }\end{DoxyParamCaption})}
+
+Drawing Components and children with given shader program
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader\+Program} & Modern pointer to shader program to set matrices \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classthunder_1_1_scene_node_a2e50c38a3273b593be7ffaee9e057ae0}\label{classthunder_1_1_scene_node_a2e50c38a3273b593be7ffaee9e057ae0}} 
+\index{thunder\+::\+Scene\+Node@{thunder\+::\+Scene\+Node}!get\+Object@{get\+Object}}
+\index{get\+Object@{get\+Object}!thunder\+::\+Scene\+Node@{thunder\+::\+Scene\+Node}}
+\subsubsection{\texorpdfstring{get\+Object()}{getObject()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+std\+::shared\+\_\+ptr$<$T$>$ thunder\+::\+Scene\+Node\+::get\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns casted pointer from \mbox{\hyperlink{classthunder_1_1_node_component}{Node\+Component}} type. Node will differentiate Component with type given in append\+Object method. You have to give same type in template as type given in append\+Object to get same Component
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type to cast \mbox{\hyperlink{classthunder_1_1_node_component}{Node\+Component}}. This will be also indificate Component to return \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+Modern pointer to Component with type given in template 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classthunder_1_1_scene_node_a40697be350194752846a29c97f1337b7}\label{classthunder_1_1_scene_node_a40697be350194752846a29c97f1337b7}} 
+\index{thunder\+::\+Scene\+Node@{thunder\+::\+Scene\+Node}!get\+Parent@{get\+Parent}}
+\index{get\+Parent@{get\+Parent}!thunder\+::\+Scene\+Node@{thunder\+::\+Scene\+Node}}
+\subsubsection{\texorpdfstring{get\+Parent()}{getParent()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classthunder_1_1_scene_node}{Scene\+Node}}$>$ thunder\+::\+Scene\+Node\+::get\+Parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Parent node 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classthunder_1_1_scene_node_aa4da20b8a7369dcb4b2ac262c3701849}\label{classthunder_1_1_scene_node_aa4da20b8a7369dcb4b2ac262c3701849}} 
+\index{thunder\+::\+Scene\+Node@{thunder\+::\+Scene\+Node}!get\+Scene\+Manager@{get\+Scene\+Manager}}
+\index{get\+Scene\+Manager@{get\+Scene\+Manager}!thunder\+::\+Scene\+Node@{thunder\+::\+Scene\+Node}}
+\subsubsection{\texorpdfstring{get\+Scene\+Manager()}{getSceneManager()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classthunder_1_1_scene_manager}{Scene\+Manager}}$>$ thunder\+::\+Scene\+Node\+::get\+Scene\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Pointer to scene manager 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classthunder_1_1_scene_node_a530678fd497174c7409b67d372dd12ed}\label{classthunder_1_1_scene_node_a530678fd497174c7409b67d372dd12ed}} 
+\index{thunder\+::\+Scene\+Node@{thunder\+::\+Scene\+Node}!set\+Scene\+Manager@{set\+Scene\+Manager}}
+\index{set\+Scene\+Manager@{set\+Scene\+Manager}!thunder\+::\+Scene\+Node@{thunder\+::\+Scene\+Node}}
+\subsubsection{\texorpdfstring{set\+Scene\+Manager()}{setSceneManager()}}
+{\footnotesize\ttfamily void thunder\+::\+Scene\+Node\+::set\+Scene\+Manager (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classthunder_1_1_scene_manager}{Scene\+Manager}} $>$}]{scene\+Manager }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene\+Manager} & pointer to scene\+Manager \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Thunder/include/\+Thunder/Scene\+Node.\+hpp\end{DoxyCompactItemize}

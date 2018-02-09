@@ -1,0 +1,110 @@
+\hypertarget{classthunder_1_1_buffer}{}\section{thunder\+:\+:Buffer Class Reference}
+\label{classthunder_1_1_buffer}\index{thunder\+::\+Buffer@{thunder\+::\+Buffer}}
+
+
+{\ttfamily \#include $<$Buffer.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classthunder_1_1_buffer_af4777908dbe80eb3fd327e1a489d43ad}{Type}} \{ {\bfseries B\+U\+F\+F\+E\+R\+\_\+\+A\+R\+R\+AY}, 
+{\bfseries E\+L\+E\+M\+E\+N\+T\+\_\+\+A\+R\+R\+AY}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classthunder_1_1_buffer_a583c81e036ea9533a97215b7a79d843c}{Buffer}} (const \mbox{\hyperlink{classthunder_1_1_buffer_af4777908dbe80eb3fd327e1a489d43ad}{Type}} \&type)
+\item 
+\mbox{\hyperlink{classthunder_1_1_buffer_a2df5bdd1d256a1a162ea9f28a70669eb}{$\sim$\+Buffer}} ()
+\item 
+void \mbox{\hyperlink{classthunder_1_1_buffer_a9f293efe84c7955d1e9fdeb7cec3be60}{bind}} ()
+\item 
+void \mbox{\hyperlink{classthunder_1_1_buffer_aaaa57bcdc160b80a0a4f8a39da51407a}{enable\+Attrib}} (const int \&index, const int \&size, const G\+Lenum \&type)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classthunder_1_1_buffer_af324ab8ee226c7147eb87e85cd6b3f08}{set\+Data}} (const std\+::vector$<$ T $>$ \&data)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents Open\+GL buffer, used in mesh. 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classthunder_1_1_buffer_af4777908dbe80eb3fd327e1a489d43ad}\label{classthunder_1_1_buffer_af4777908dbe80eb3fd327e1a489d43ad}} 
+\index{thunder\+::\+Buffer@{thunder\+::\+Buffer}!Type@{Type}}
+\index{Type@{Type}!thunder\+::\+Buffer@{thunder\+::\+Buffer}}
+\subsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classthunder_1_1_buffer_af4777908dbe80eb3fd327e1a489d43ad}{thunder\+::\+Buffer\+::\+Type}}}
+
+Type of buffer 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classthunder_1_1_buffer_a583c81e036ea9533a97215b7a79d843c}\label{classthunder_1_1_buffer_a583c81e036ea9533a97215b7a79d843c}} 
+\index{thunder\+::\+Buffer@{thunder\+::\+Buffer}!Buffer@{Buffer}}
+\index{Buffer@{Buffer}!thunder\+::\+Buffer@{thunder\+::\+Buffer}}
+\subsubsection{\texorpdfstring{Buffer()}{Buffer()}}
+{\footnotesize\ttfamily thunder\+::\+Buffer\+::\+Buffer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classthunder_1_1_buffer_af4777908dbe80eb3fd327e1a489d43ad}{Type}} \&}]{type }\end{DoxyParamCaption})}
+
+Generating buffer
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Type of buffer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classthunder_1_1_buffer_a2df5bdd1d256a1a162ea9f28a70669eb}\label{classthunder_1_1_buffer_a2df5bdd1d256a1a162ea9f28a70669eb}} 
+\index{thunder\+::\+Buffer@{thunder\+::\+Buffer}!````~Buffer@{$\sim$\+Buffer}}
+\index{````~Buffer@{$\sim$\+Buffer}!thunder\+::\+Buffer@{thunder\+::\+Buffer}}
+\subsubsection{\texorpdfstring{$\sim$\+Buffer()}{~Buffer()}}
+{\footnotesize\ttfamily thunder\+::\+Buffer\+::$\sim$\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destroying buffer 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classthunder_1_1_buffer_a9f293efe84c7955d1e9fdeb7cec3be60}\label{classthunder_1_1_buffer_a9f293efe84c7955d1e9fdeb7cec3be60}} 
+\index{thunder\+::\+Buffer@{thunder\+::\+Buffer}!bind@{bind}}
+\index{bind@{bind}!thunder\+::\+Buffer@{thunder\+::\+Buffer}}
+\subsubsection{\texorpdfstring{bind()}{bind()}}
+{\footnotesize\ttfamily void thunder\+::\+Buffer\+::bind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Binding this buffer to state machine \mbox{\Hypertarget{classthunder_1_1_buffer_aaaa57bcdc160b80a0a4f8a39da51407a}\label{classthunder_1_1_buffer_aaaa57bcdc160b80a0a4f8a39da51407a}} 
+\index{thunder\+::\+Buffer@{thunder\+::\+Buffer}!enable\+Attrib@{enable\+Attrib}}
+\index{enable\+Attrib@{enable\+Attrib}!thunder\+::\+Buffer@{thunder\+::\+Buffer}}
+\subsubsection{\texorpdfstring{enable\+Attrib()}{enableAttrib()}}
+{\footnotesize\ttfamily void thunder\+::\+Buffer\+::enable\+Attrib (\begin{DoxyParamCaption}\item[{const int \&}]{index,  }\item[{const int \&}]{size,  }\item[{const G\+Lenum \&}]{type }\end{DoxyParamCaption})}
+
+Enabling attribute in shaders Example\+: {\ttfamily normal\+Buffer.\+enable\+Attrib(1, 3, G\+L\+\_\+\+F\+L\+O\+A\+T);}
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of Attribute in shaders \\
+\hline
+{\em size} & Size of attribute(if this is vec3, give 3, if this vec2, give 2) \\
+\hline
+{\em type} & Type like G\+L\+\_\+\+F\+L\+O\+AT or G\+L\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classthunder_1_1_buffer_af324ab8ee226c7147eb87e85cd6b3f08}\label{classthunder_1_1_buffer_af324ab8ee226c7147eb87e85cd6b3f08}} 
+\index{thunder\+::\+Buffer@{thunder\+::\+Buffer}!set\+Data@{set\+Data}}
+\index{set\+Data@{set\+Data}!thunder\+::\+Buffer@{thunder\+::\+Buffer}}
+\subsubsection{\texorpdfstring{set\+Data()}{setData()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void thunder\+::\+Buffer\+::set\+Data (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Setting data to buffer
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of vector of data \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Vector of data \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Thunder/include/\+Thunder/Buffer.\+hpp\end{DoxyCompactItemize}

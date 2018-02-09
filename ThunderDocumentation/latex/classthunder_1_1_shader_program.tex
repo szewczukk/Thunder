@@ -1,0 +1,122 @@
+\hypertarget{classthunder_1_1_shader_program}{}\section{thunder\+:\+:Shader\+Program Class Reference}
+\label{classthunder_1_1_shader_program}\index{thunder\+::\+Shader\+Program@{thunder\+::\+Shader\+Program}}
+
+
+{\ttfamily \#include $<$Shader\+Program.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classthunder_1_1_shader_program_a80f307830ba7782043ed35b0921d115c}{Shader\+Program}} (const std\+::string \&vertex\+Shader\+File\+Path, const std\+::string \&fragment\+Shader\+File\+Path)
+\item 
+\mbox{\hyperlink{classthunder_1_1_shader_program_abf3826a146b63b5fcb8214de236732ac}{$\sim$\+Shader\+Program}} ()
+\item 
+void \mbox{\hyperlink{classthunder_1_1_shader_program_a1ef3d2a9d475859d53b60d8999c02068}{use}} ()
+\item 
+void \mbox{\hyperlink{classthunder_1_1_shader_program_a4a16ff2da021f298a4f00957e987682c}{set\+Uniform\+Matrix}} (const std\+::string \&name, const glm\+::mat4 \&matrix)
+\item 
+void \mbox{\hyperlink{classthunder_1_1_shader_program_a88bff19b426a37bb610434be19e07d12}{set\+Uniform\+Vec3}} (const std\+::string \&name, const glm\+::vec3 \&vector)
+\item 
+void \mbox{\hyperlink{classthunder_1_1_shader_program_a10a375f97b7774beac6280db50318811}{set\+Float\+Uniform}} (const std\+::string \&name, const float \&value)
+\item 
+void \mbox{\hyperlink{classthunder_1_1_shader_program_aa763d389b3670b9c17276ce144729d16}{set\+Integer\+Uniform}} (const std\+::string \&name, const int \&value)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Storages Vertex and Fragment shader and operates on them 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classthunder_1_1_shader_program_a80f307830ba7782043ed35b0921d115c}\label{classthunder_1_1_shader_program_a80f307830ba7782043ed35b0921d115c}} 
+\index{thunder\+::\+Shader\+Program@{thunder\+::\+Shader\+Program}!Shader\+Program@{Shader\+Program}}
+\index{Shader\+Program@{Shader\+Program}!thunder\+::\+Shader\+Program@{thunder\+::\+Shader\+Program}}
+\subsubsection{\texorpdfstring{Shader\+Program()}{ShaderProgram()}}
+{\footnotesize\ttfamily thunder\+::\+Shader\+Program\+::\+Shader\+Program (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{vertex\+Shader\+File\+Path,  }\item[{const std\+::string \&}]{fragment\+Shader\+File\+Path }\end{DoxyParamCaption})}
+
+Initializing Vertex and Fragment shader, creating GL program, then shaders will be destroyed, but shader program will be correct. 
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Shader\+File\+Path} & Relative path to vertex shader file \\
+\hline
+{\em fragment\+Shader\+File\+Path} & Relative path to fragment shader file \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classthunder_1_1_shader_program_abf3826a146b63b5fcb8214de236732ac}\label{classthunder_1_1_shader_program_abf3826a146b63b5fcb8214de236732ac}} 
+\index{thunder\+::\+Shader\+Program@{thunder\+::\+Shader\+Program}!````~Shader\+Program@{$\sim$\+Shader\+Program}}
+\index{````~Shader\+Program@{$\sim$\+Shader\+Program}!thunder\+::\+Shader\+Program@{thunder\+::\+Shader\+Program}}
+\subsubsection{\texorpdfstring{$\sim$\+Shader\+Program()}{~ShaderProgram()}}
+{\footnotesize\ttfamily thunder\+::\+Shader\+Program\+::$\sim$\+Shader\+Program (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destroying shader program 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classthunder_1_1_shader_program_a10a375f97b7774beac6280db50318811}\label{classthunder_1_1_shader_program_a10a375f97b7774beac6280db50318811}} 
+\index{thunder\+::\+Shader\+Program@{thunder\+::\+Shader\+Program}!set\+Float\+Uniform@{set\+Float\+Uniform}}
+\index{set\+Float\+Uniform@{set\+Float\+Uniform}!thunder\+::\+Shader\+Program@{thunder\+::\+Shader\+Program}}
+\subsubsection{\texorpdfstring{set\+Float\+Uniform()}{setFloatUniform()}}
+{\footnotesize\ttfamily void thunder\+::\+Shader\+Program\+::set\+Float\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const float \&}]{value }\end{DoxyParamCaption})}
+
+Setting floating variable uniform at shader program
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of uniform variable in shader \\
+\hline
+{\em matrix} & Value of uniform variable \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classthunder_1_1_shader_program_aa763d389b3670b9c17276ce144729d16}\label{classthunder_1_1_shader_program_aa763d389b3670b9c17276ce144729d16}} 
+\index{thunder\+::\+Shader\+Program@{thunder\+::\+Shader\+Program}!set\+Integer\+Uniform@{set\+Integer\+Uniform}}
+\index{set\+Integer\+Uniform@{set\+Integer\+Uniform}!thunder\+::\+Shader\+Program@{thunder\+::\+Shader\+Program}}
+\subsubsection{\texorpdfstring{set\+Integer\+Uniform()}{setIntegerUniform()}}
+{\footnotesize\ttfamily void thunder\+::\+Shader\+Program\+::set\+Integer\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const int \&}]{value }\end{DoxyParamCaption})}
+
+Setting integer variable uniform at shader program
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of uniform variable in shader \\
+\hline
+{\em matrix} & Value of uniform variable \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classthunder_1_1_shader_program_a4a16ff2da021f298a4f00957e987682c}\label{classthunder_1_1_shader_program_a4a16ff2da021f298a4f00957e987682c}} 
+\index{thunder\+::\+Shader\+Program@{thunder\+::\+Shader\+Program}!set\+Uniform\+Matrix@{set\+Uniform\+Matrix}}
+\index{set\+Uniform\+Matrix@{set\+Uniform\+Matrix}!thunder\+::\+Shader\+Program@{thunder\+::\+Shader\+Program}}
+\subsubsection{\texorpdfstring{set\+Uniform\+Matrix()}{setUniformMatrix()}}
+{\footnotesize\ttfamily void thunder\+::\+Shader\+Program\+::set\+Uniform\+Matrix (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const glm\+::mat4 \&}]{matrix }\end{DoxyParamCaption})}
+
+Setting matrix uniform at shader program
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of uniform variable in shader \\
+\hline
+{\em matrix} & Value of uniform variable \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classthunder_1_1_shader_program_a88bff19b426a37bb610434be19e07d12}\label{classthunder_1_1_shader_program_a88bff19b426a37bb610434be19e07d12}} 
+\index{thunder\+::\+Shader\+Program@{thunder\+::\+Shader\+Program}!set\+Uniform\+Vec3@{set\+Uniform\+Vec3}}
+\index{set\+Uniform\+Vec3@{set\+Uniform\+Vec3}!thunder\+::\+Shader\+Program@{thunder\+::\+Shader\+Program}}
+\subsubsection{\texorpdfstring{set\+Uniform\+Vec3()}{setUniformVec3()}}
+{\footnotesize\ttfamily void thunder\+::\+Shader\+Program\+::set\+Uniform\+Vec3 (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const glm\+::vec3 \&}]{vector }\end{DoxyParamCaption})}
+
+Setting vector uniform at shader program
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of uniform variable in shader \\
+\hline
+{\em matrix} & Value of uniform variable \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classthunder_1_1_shader_program_a1ef3d2a9d475859d53b60d8999c02068}\label{classthunder_1_1_shader_program_a1ef3d2a9d475859d53b60d8999c02068}} 
+\index{thunder\+::\+Shader\+Program@{thunder\+::\+Shader\+Program}!use@{use}}
+\index{use@{use}!thunder\+::\+Shader\+Program@{thunder\+::\+Shader\+Program}}
+\subsubsection{\texorpdfstring{use()}{use()}}
+{\footnotesize\ttfamily void thunder\+::\+Shader\+Program\+::use (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Using this shader as current. Now all uniforms will be added, and everything objects will be rendered with this shader. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Thunder/include/\+Thunder/Shader\+Program.\+hpp\end{DoxyCompactItemize}

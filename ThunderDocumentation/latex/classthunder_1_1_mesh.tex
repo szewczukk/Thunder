@@ -1,0 +1,60 @@
+\hypertarget{classthunder_1_1_mesh}{}\section{thunder\+:\+:Mesh Class Reference}
+\label{classthunder_1_1_mesh}\index{thunder\+::\+Mesh@{thunder\+::\+Mesh}}
+
+
+{\ttfamily \#include $<$Mesh.\+hpp$>$}
+
+Inheritance diagram for thunder\+:\+:Mesh\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classthunder_1_1_mesh}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classthunder_1_1_mesh_ac5b6ef13b76f1775d31df125677b4bda}{Mesh}} (const std\+::vector$<$ glm\+::vec3 $>$ \&vertices, const std\+::vector$<$ glm\+::vec3 $>$ \&normals, const std\+::vector$<$ glm\+::vec2 $>$ \&uvs, const std\+::vector$<$ unsigned int $>$ \&indices)
+\item 
+void \mbox{\hyperlink{classthunder_1_1_mesh_a08bdbe48d3f9244d6b6a8edc81d34ee4}{draw}} () override
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represent indexed \mbox{\hyperlink{classthunder_1_1_mesh}{Mesh}} with vertices, normals, indices and uvs. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classthunder_1_1_mesh_ac5b6ef13b76f1775d31df125677b4bda}\label{classthunder_1_1_mesh_ac5b6ef13b76f1775d31df125677b4bda}} 
+\index{thunder\+::\+Mesh@{thunder\+::\+Mesh}!Mesh@{Mesh}}
+\index{Mesh@{Mesh}!thunder\+::\+Mesh@{thunder\+::\+Mesh}}
+\subsubsection{\texorpdfstring{Mesh()}{Mesh()}}
+{\footnotesize\ttfamily thunder\+::\+Mesh\+::\+Mesh (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ glm\+::vec3 $>$ \&}]{vertices,  }\item[{const std\+::vector$<$ glm\+::vec3 $>$ \&}]{normals,  }\item[{const std\+::vector$<$ glm\+::vec2 $>$ \&}]{uvs,  }\item[{const std\+::vector$<$ unsigned int $>$ \&}]{indices }\end{DoxyParamCaption})}
+
+Creating buffers, pushing data to them
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertices} & Verticies of \mbox{\hyperlink{classthunder_1_1_mesh}{Mesh}} \\
+\hline
+{\em normals} & Normals of \mbox{\hyperlink{classthunder_1_1_mesh}{Mesh}} \\
+\hline
+{\em indices} & The way to connect vertices to draw one single triangle \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classthunder_1_1_mesh_a08bdbe48d3f9244d6b6a8edc81d34ee4}\label{classthunder_1_1_mesh_a08bdbe48d3f9244d6b6a8edc81d34ee4}} 
+\index{thunder\+::\+Mesh@{thunder\+::\+Mesh}!draw@{draw}}
+\index{draw@{draw}!thunder\+::\+Mesh@{thunder\+::\+Mesh}}
+\subsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void thunder\+::\+Mesh\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drawing \mbox{\hyperlink{classthunder_1_1_mesh}{Mesh}} 
+
+Reimplemented from \mbox{\hyperlink{classthunder_1_1_node_component_a1edbd50e6595a2ad181d14683c98f405}{thunder\+::\+Node\+Component}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Thunder/include/\+Thunder/Mesh.\+hpp\end{DoxyCompactItemize}

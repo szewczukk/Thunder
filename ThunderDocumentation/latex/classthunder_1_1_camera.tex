@@ -1,0 +1,119 @@
+\hypertarget{classthunder_1_1_camera}{}\section{thunder\+:\+:Camera Class Reference}
+\label{classthunder_1_1_camera}\index{thunder\+::\+Camera@{thunder\+::\+Camera}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classthunder_1_1_camera_a8d5076474df63a88c77cb072859fb955}{Camera}} (const int \&width, const int \&height)
+\item 
+void \mbox{\hyperlink{classthunder_1_1_camera_a6095f7b60a507434cb74e5fcb542183e}{set\+Position}} (const glm\+::vec3 \&position)
+\item 
+void \mbox{\hyperlink{classthunder_1_1_camera_a6161ae2a40fe77a56fec1cf058241d29}{move}} (const glm\+::vec3 \&relative)
+\item 
+glm\+::vec3 \mbox{\hyperlink{classthunder_1_1_camera_a56cd58d018436be6bb1cd47a8d356021}{get\+Position}} ()
+\item 
+glm\+::mat4 \mbox{\hyperlink{classthunder_1_1_camera_aca107f66761e0d19615b4ade8c706c66}{get\+Matrix}} ()
+\item 
+void \mbox{\hyperlink{classthunder_1_1_camera_af585912a2b2efcb4d514ce4983d5faea}{set\+Rotation}} (const glm\+::vec3 \&axis, const float \&angle)
+\item 
+void \mbox{\hyperlink{classthunder_1_1_camera_adaf17dcb64874463c4df918d9fc1a736}{rotate}} (const glm\+::vec3 \&axis, const float \&angle)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classthunder_1_1_camera_a8d5076474df63a88c77cb072859fb955}\label{classthunder_1_1_camera_a8d5076474df63a88c77cb072859fb955}} 
+\index{thunder\+::\+Camera@{thunder\+::\+Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!thunder\+::\+Camera@{thunder\+::\+Camera}}
+\subsubsection{\texorpdfstring{Camera()}{Camera()}}
+{\footnotesize\ttfamily thunder\+::\+Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{const int \&}]{width,  }\item[{const int \&}]{height }\end{DoxyParamCaption})}
+
+Setting attributes
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & Width of window \\
+\hline
+{\em height} & Height of window \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classthunder_1_1_camera_aca107f66761e0d19615b4ade8c706c66}\label{classthunder_1_1_camera_aca107f66761e0d19615b4ade8c706c66}} 
+\index{thunder\+::\+Camera@{thunder\+::\+Camera}!get\+Matrix@{get\+Matrix}}
+\index{get\+Matrix@{get\+Matrix}!thunder\+::\+Camera@{thunder\+::\+Camera}}
+\subsubsection{\texorpdfstring{get\+Matrix()}{getMatrix()}}
+{\footnotesize\ttfamily glm\+::mat4 thunder\+::\+Camera\+::get\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Matrix of \mbox{\hyperlink{classthunder_1_1_camera}{Camera}} to use in shader 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classthunder_1_1_camera_a56cd58d018436be6bb1cd47a8d356021}\label{classthunder_1_1_camera_a56cd58d018436be6bb1cd47a8d356021}} 
+\index{thunder\+::\+Camera@{thunder\+::\+Camera}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!thunder\+::\+Camera@{thunder\+::\+Camera}}
+\subsubsection{\texorpdfstring{get\+Position()}{getPosition()}}
+{\footnotesize\ttfamily glm\+::vec3 thunder\+::\+Camera\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Position of \mbox{\hyperlink{classthunder_1_1_camera}{Camera}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classthunder_1_1_camera_a6161ae2a40fe77a56fec1cf058241d29}\label{classthunder_1_1_camera_a6161ae2a40fe77a56fec1cf058241d29}} 
+\index{thunder\+::\+Camera@{thunder\+::\+Camera}!move@{move}}
+\index{move@{move}!thunder\+::\+Camera@{thunder\+::\+Camera}}
+\subsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void thunder\+::\+Camera\+::move (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{relative }\end{DoxyParamCaption})}
+
+Moving camera (current position + relative)
+
+
+\begin{DoxyParams}{Parameters}
+{\em relative} & Relative position to current \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classthunder_1_1_camera_adaf17dcb64874463c4df918d9fc1a736}\label{classthunder_1_1_camera_adaf17dcb64874463c4df918d9fc1a736}} 
+\index{thunder\+::\+Camera@{thunder\+::\+Camera}!rotate@{rotate}}
+\index{rotate@{rotate}!thunder\+::\+Camera@{thunder\+::\+Camera}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily void thunder\+::\+Camera\+::rotate (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{axis,  }\item[{const float \&}]{angle }\end{DoxyParamCaption})}
+
+Rotating \mbox{\hyperlink{classthunder_1_1_transform}{Transform}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & Axis to rotate \\
+\hline
+{\em angle} & Angle of rotation \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classthunder_1_1_camera_a6095f7b60a507434cb74e5fcb542183e}\label{classthunder_1_1_camera_a6095f7b60a507434cb74e5fcb542183e}} 
+\index{thunder\+::\+Camera@{thunder\+::\+Camera}!set\+Position@{set\+Position}}
+\index{set\+Position@{set\+Position}!thunder\+::\+Camera@{thunder\+::\+Camera}}
+\subsubsection{\texorpdfstring{set\+Position()}{setPosition()}}
+{\footnotesize\ttfamily void thunder\+::\+Camera\+::set\+Position (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{position }\end{DoxyParamCaption})}
+
+Setting new position of \mbox{\hyperlink{classthunder_1_1_camera}{Camera}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & New position of \mbox{\hyperlink{classthunder_1_1_camera}{Camera}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classthunder_1_1_camera_af585912a2b2efcb4d514ce4983d5faea}\label{classthunder_1_1_camera_af585912a2b2efcb4d514ce4983d5faea}} 
+\index{thunder\+::\+Camera@{thunder\+::\+Camera}!set\+Rotation@{set\+Rotation}}
+\index{set\+Rotation@{set\+Rotation}!thunder\+::\+Camera@{thunder\+::\+Camera}}
+\subsubsection{\texorpdfstring{set\+Rotation()}{setRotation()}}
+{\footnotesize\ttfamily void thunder\+::\+Camera\+::set\+Rotation (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{axis,  }\item[{const float \&}]{angle }\end{DoxyParamCaption})}
+
+Setting rotation of \mbox{\hyperlink{classthunder_1_1_transform}{Transform}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & Axis to rotate \\
+\hline
+{\em angle} & Angle to rotate in given axis \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Thunder/include/\+Thunder/Camera.\+hpp\end{DoxyCompactItemize}
