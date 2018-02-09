@@ -39,11 +39,6 @@ namespace thunder
 		*/
 		void setParent(const std::shared_ptr<SceneNode> & node);
 		/*!
-			Updates Component with deltatime
-			@param deltaTime Time between rendering this and previous time
-		*/
-		virtual void update(const float & deltaTime) {};
-		/*!
 			Drawing Component
 		*/
 		virtual void draw() {};

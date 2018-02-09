@@ -58,6 +58,7 @@ namespace thunder
 		glUseProgram(program);
 	}
 
+
 	void ShaderProgram::setUniformMatrix(const std::string & name, const glm::mat4 & matrix)
 	{
 		glUniformMatrix4fv(getUniformLocation(name), 1, GL_FALSE, glm::value_ptr(matrix));

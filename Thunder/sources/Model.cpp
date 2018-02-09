@@ -238,7 +238,7 @@ namespace thunder
 			indices.push_back(aMesh->mFaces[i].mIndices[2]);
 		}
 
-		mesh = new Mesh(vertices, normals, indices);
+		mesh = new Mesh(vertices, normals, uvs, indices);
 
 		vertices.clear();
 		normals.clear();

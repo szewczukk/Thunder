@@ -39,8 +39,8 @@ namespace thunder
 			@param normals Normals of Mesh
 			@param indices The way to connect vertices to draw one single triangle
 		*/
-		Mesh(const std::vector<glm::vec3> & vertices, const std::vector<glm::vec3> & normals, 
-			const std::vector<unsigned int> & indices);
+		Mesh(const std::vector<glm::vec3> & vertices, const std::vector<glm::vec3> & normals,
+			 const std::vector<glm::vec2> & uvs, const std::vector<unsigned int> & indices);
 		/*!
 			Drawing Mesh
 		*/
@@ -49,6 +49,7 @@ namespace thunder
 		Buffer vertexBuffer;
 		Buffer elementBuffer;
 		Buffer normalBuffer;
+		Buffer uvBuffer;
 		VertexArray vertexArray;
 
 		int verticesCount;

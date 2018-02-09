@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -31,6 +31,8 @@
     <ClInclude Include="include\Thunder\SceneNode.hpp" />
     <ClInclude Include="include\Thunder\Shader.hpp" />
     <ClInclude Include="include\Thunder\ShaderProgram.hpp" />
+    <ClInclude Include="include\Thunder\Texture.hpp" />
+    <ClInclude Include="include\Thunder\TexturedModel.hpp" />
     <ClInclude Include="include\Thunder\Transform.hpp" />
     <ClInclude Include="include\Thunder\VertexArray.hpp" />
   </ItemGroup>
@@ -47,6 +49,8 @@
     <ClCompile Include="sources\SceneNode.cpp" />
     <ClCompile Include="sources\Shader.cpp" />
     <ClCompile Include="sources\ShaderProgram.cpp" />
+    <ClCompile Include="sources\Texture.cpp" />
+    <ClCompile Include="sources\TexturedModel.cpp" />
     <ClCompile Include="sources\Transform.cpp" />
     <ClCompile Include="sources\VertexArray.cpp" />
   </ItemGroup>
@@ -124,15 +128,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Libraries\SDL2\include;C:\Libraries\glm\glm;C:\Libraries\glew\include;C:\Libraries\assimp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Libraries\FreeImage\Dist\x32;C:\Libraries\SDL2\include;C:\Libraries\glm\glm;C:\Libraries\glew\include;C:\Libraries\assimp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalLibraryDirectories>C:\Libraries\SDL2\lib\x86;C:\Libraries\glew\lib\Release\Win32;C:\Libraries\assimp\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glew32.lib;SDL2.lib;assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Libraries\FreeImage\Dist\x32;C:\Libraries\SDL2\lib\x86;C:\Libraries\glew\lib\Release\Win32;C:\Libraries\assimp\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;SDL2.lib;assimp.lib;FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

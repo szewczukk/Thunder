@@ -51,6 +51,12 @@
     <ClInclude Include="include\Thunder\VertexArray.hpp">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="include\Thunder\Texture.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Thunder\TexturedModel.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sources\Buffer.cpp">
@@ -93,6 +99,12 @@
       <Filter>sources</Filter>
     </ClCompile>
     <ClCompile Include="sources\VertexArray.cpp">
+      <Filter>sources</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Texture.cpp">
+      <Filter>sources</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\TexturedModel.cpp">
       <Filter>sources</Filter>
     </ClCompile>
   </ItemGroup>

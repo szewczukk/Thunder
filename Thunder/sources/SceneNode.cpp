@@ -51,7 +51,7 @@ namespace thunder
 
 	void SceneNode::draw(std::shared_ptr<ShaderProgram> shaderProgram)
 	{
-		shaderProgram->setUniformMatrix("mTransform", getMatrix());
+		shaderProgram->setUniformMatrix("uTransform", getMatrix());
 		for (auto & obj : objects)
 		{
 			obj.second->draw();
@@ -59,19 +59,6 @@ namespace thunder
 		for (auto & child : children)
 		{
 			child.second->draw(shaderProgram);
-		}
-	}
-
-
-	void SceneNode::update(const float & deltaTime)
-	{
-		for (auto & obj : objects)
-		{
-			obj.second->update(deltaTime);
-		}
-		for (auto & child : children)
-		{
-			child.second->update(deltaTime);
 		}
 	}
 

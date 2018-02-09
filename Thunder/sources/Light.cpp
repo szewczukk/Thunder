@@ -27,7 +27,6 @@ namespace thunder
 	Light::Light(const glm::vec3 & color, const float & strength)
 		:color(color), strength(strength)
 	{
-		
 	}
 
 

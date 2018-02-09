@@ -117,12 +117,6 @@ namespace thunder
 		*/
 		void draw(std::shared_ptr<ShaderProgram> shaderProgram);
 		/*!
-			Updaing Components and children with given deltatime
-
-			@param deltaTime Time between rendering this and previous time
-		*/
-		void update(const float & deltaTime);
-		/*!
 			@return Pointer to scene manager
 		*/
 		std::shared_ptr<SceneManager> getSceneManager() { return sceneManager; };

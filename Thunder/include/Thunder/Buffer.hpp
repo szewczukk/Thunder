@@ -69,7 +69,7 @@ namespace thunder
 			@param data Vector of data
 		*/
 		template<typename T>
-		void setData(const std::vector<T> & data)
+		inline void setData(const std::vector<T> & data)
 		{
 			bind();
 

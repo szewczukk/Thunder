@@ -18,12 +18,14 @@
 
 #include "../include/Thunder/Mesh.hpp"
 
+#include <vec2.hpp>
+
 namespace thunder
 {
 	Mesh::Mesh(const std::vector<glm::vec3> & vertices, const std::vector<glm::vec3> & normals,
-		const std::vector<unsigned int> & indices)
+		const std::vector<glm::vec2> & uvs, const std::vector<unsigned int> & indices)
 		: verticesCount(indices.size()), vertexBuffer(Buffer::Type::BUFFER_ARRAY),
-		normalBuffer(Buffer::Type::BUFFER_ARRAY),
+		normalBuffer(Buffer::Type::BUFFER_ARRAY), uvBuffer(Buffer::Type::BUFFER_ARRAY),
 		elementBuffer(Buffer::Type::ELEMENT_ARRAY), vertexArray()
 	{
 		if (indices.size() > 0)
@@ -37,6 +39,10 @@ namespace thunder
 			normalBuffer.bind();
 			normalBuffer.setData(normals);
 			normalBuffer.enableAttrib(1, 3, GL_FLOAT);
+
+			uvBuffer.bind();
+			uvBuffer.setData(uvs);
+			uvBuffer.enableAttrib(2, 2, GL_FLOAT);
 
 			elementBuffer.bind();
 			elementBuffer.setData(indices);
@@ -55,5 +61,8 @@ namespace thunder
 		elementBuffer.bind();
 		glDrawElements(GL_TRIANGLES, verticesCount, GL_UNSIGNED_INT, nullptr);
 		glBindVertexArray(0);
+
+		//TODO: Resetting Texture after drawing to make untextured model untextured
+		//glBindTexture(GL_TEXTURE_2D, 0);
 	}
 }

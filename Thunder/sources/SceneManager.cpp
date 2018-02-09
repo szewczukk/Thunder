@@ -35,6 +35,7 @@ namespace thunder
 	{
 	}
 
+
 	std::shared_ptr<SceneNode> SceneManager::getRootNode()
 	{
 		return rootNode;
@@ -52,16 +53,12 @@ namespace thunder
 		return shaderProgram;
 	}
 
-	void SceneManager::updateAll(const float & deltaTime)
-	{
-		rootNode->update(deltaTime);
-	}
 
 	void SceneManager::drawAll()
 	{
-		shaderProgram->setUniformMatrix("mPerspective", camera->getMatrix());
-		shaderProgram->setUniformVec3("mModelColor", { 1, 1, 1 });
-		shaderProgram->setUniformVec3("mViewPosition", camera->getPosition());
+		shaderProgram->setUniformMatrix("uPerspective", camera->getMatrix());
+		shaderProgram->setUniformVec3("uModelColor", { 1, 1, 1 });
+		shaderProgram->setUniformVec3("uViewPosition", camera->getPosition());
 
 		for (int i = 0; i < lights.size(); i++)
 		{

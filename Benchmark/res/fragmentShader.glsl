@@ -1,12 +1,17 @@
 #version 330 core
 
-out vec3 oColor;
+#define MAX_LIGHTS_COUNT 10
 
-in vec3 oNormal;
-in vec3 oFragmentPosition;
+out vec4 color;
 
-uniform vec3 mModelColor;
-uniform vec3 mViewPosition;
+in vec3 normal;
+in vec3 fragmentPosition;
+in vec2 uv;
+
+uniform vec3 uModelColor;
+uniform vec3 uViewPosition;
+uniform sampler2D uTexture;
+
 
 struct Light
 {	
@@ -14,8 +19,6 @@ struct Light
 	vec3 color;
 	float strength;
 };
-
-#define MAX_LIGHTS_COUNT 10
 
 uniform Light uLight[MAX_LIGHTS_COUNT];
 
@@ -26,15 +29,15 @@ vec3 calculateLight(Light light)
 	vec3 ambient = ambientStrength * light.color;
 	
 	//diffuse
-	vec3 norm = normalize(oNormal);
-	vec3 lightDirection = normalize(light.position - oFragmentPosition);
+	vec3 norm = normalize(normal);
+	vec3 lightDirection = normalize(light.position - fragmentPosition);
 	
 	float diff = max(dot(norm, lightDirection), 0.0);
 	vec3 diffuse = diff * light.color;
 	
 	//specular
 	float specularStrength = light.strength;
-	vec3 viewDir = normalize(mViewPosition - oFragmentPosition);
+	vec3 viewDir = normalize(uViewPosition - fragmentPosition);
 	vec3 reflectDir = reflect(-lightDirection, norm);  
 	float spec = pow(max(dot(viewDir, reflectDir), 0.0), 32);
 	vec3 specular = specularStrength * spec * light.color;  
@@ -50,5 +53,6 @@ void main()
 	{
 		result += calculateLight(uLight[i]);
 	}
-	oColor = result * mModelColor;
+	//color = vec4(result * uModelColor, 1);
+	color = vec4(result, 1) * texture(uTexture, uv);
 }

@@ -8,6 +8,7 @@
 #include <Thunder/Camera.hpp>
 #include <Thunder/ShaderProgram.hpp>
 #include <Thunder/Light.hpp>
+#include <Thunder/TexturedModel.hpp>
 
 #undef main
 
@@ -25,7 +26,7 @@ int main()
 	camera->setPosition({ 0, 0, 10 });
 
 	auto monkey = sceneManager->getRootNode()->createChildNode("monkey");
-	monkey->appendObject<Model>("res/monkey.obj");
+	monkey->appendObject<TexturedModel>("res/monkey.obj", "res/texture.png");
 
 	auto bunny = sceneManager->getRootNode()->createChildNode("bunny");
 	bunny->appendObject<Model>("res/bunny.obj");
@@ -68,7 +69,6 @@ int main()
 
 		device.clear(0.1f, 0.2f, 0.2f);
 
-		sceneManager->updateAll(1.6f);
 		sceneManager->drawAll();
 
 		device.render();

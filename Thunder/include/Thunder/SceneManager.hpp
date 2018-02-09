@@ -63,12 +63,6 @@ namespace thunder
 		*/
 		std::shared_ptr<ShaderProgram> getShaderProgram();
 		/*!
-			Updating root node. This method is updating children nodes of root too
-
-			@param deltaTime Time between rendering this and previous time
-		*/
-		void updateAll(const float & deltaTime);
-		/*!
 			Drawing root node. This method is drawing children nodes of root too
 		*/
 		void drawAll();
