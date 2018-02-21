@@ -14,65 +14,51 @@
 
 using namespace thunder;
 
-int main()
+class Game : public Device
 {
-	Device device(800, 600);
-
-	auto sceneManager = device.getSceneManager();
-	auto eventHandler = device.getEventHandler();
-
-	auto camera = sceneManager->getCamera();
-
-	camera->setPosition({ 0, 0, 10 });
-
-	auto monkey = sceneManager->getRootNode()->createChildNode("monkey");
-	monkey->appendObject<TexturedModel>("res/monkey.obj", "res/texture.png");
-
-	auto bunny = sceneManager->getRootNode()->createChildNode("bunny");
-	bunny->appendObject<Model>("res/bunny.obj");
-
-	auto light = sceneManager->getRootNode()->createChildNode("light");
-	light->setPosition({ -2, -2, 2 });
-	light->appendObject<Light>(glm::vec3(1, 1, 1), 0.001);
-
-	monkey->setPosition({ 1, 0, 0 });
-	bunny->setPosition({ -1, -2, -5 });
-
-	float now = 0, last = 0, delta = 0;
-
-	bool quit = false;
-	while (!quit)
+public:
+	Game(const int & width, const int & height)
+		: Device(width, height), 
+		monkey(sceneManager->getRootNode()->createChildNode("monkey")),
+		bunny(sceneManager->getRootNode()->createChildNode("bunny")), 
+		light(sceneManager->getRootNode()->createChildNode("light"))
 	{
-		now = SDL_GetTicks();
-		delta = now - last;
-		last = now;
+		monkey->appendObject<TexturedModel>("res/monkey.obj", "res/texture.png");
+		bunny->appendObject<TexturedModel>("res/bunny.obj", "res/texture.png");
 
-		while (eventHandler->pollEvents())
-		{
-			if (eventHandler->windowState())
-				quit = true;
-		}
-		
+		camera->setPosition({ 0, 0, 10 });
+	
+		light->setPosition({ -2, -2, 2 });
+		light->appendObject<Light>(glm::vec3(1, 1, 1), 0.001);
+
+		monkey->setPosition({ 1, 0, 0 });
+		bunny->setPosition({ -1, -2, -5 });
+	};
+	
+	virtual void update(const float & deltaTime) override
+	{
 		if (eventHandler->isKeyPressed(SDL_SCANCODE_A))
-			camera->rotate({ 0, 1, 0 }, delta / 100);
+			camera->rotate({ 0, 1, 0 }, deltaTime / 100);
 		if (eventHandler->isKeyPressed(SDL_SCANCODE_D))
-			camera->rotate({ 0, 1, 0 }, -delta / 100);
+			camera->rotate({ 0, 1, 0 }, -deltaTime / 100);
 		if (eventHandler->isKeyPressed(SDL_SCANCODE_W))
-			camera->move({ 0, 0, -delta / 50 });
+			camera->move({ 0, 0, -deltaTime / 50 });
 		if (eventHandler->isKeyPressed(SDL_SCANCODE_S))
-			camera->move({ 0, 0, delta / 50 });
+			camera->move({ 0, 0, deltaTime / 50 });
 
 		if (eventHandler->isKeyPressed(SDL_SCANCODE_LEFT))
-			monkey->move({ -delta / 50, 0, 0 });
+			monkey->move({ -deltaTime / 50, 0, 0 });
 		if (eventHandler->isKeyPressed(SDL_SCANCODE_RIGHT))
-			monkey->move({ delta / 50, 0, 0 });
-
-		device.clear(0.1f, 0.2f, 0.2f);
-
-		sceneManager->drawAll();
-
-		device.render();
+			monkey->move({ deltaTime / 50, 0, 0 });
 	}
+protected:
+	std::shared_ptr<SceneNode> monkey;
+	std::shared_ptr<SceneNode> bunny;
+	std::shared_ptr<SceneNode> light;
+};
 
-	return 0;
+int main()
+{
+	Game game(800, 600);
+	return game.run();
 }

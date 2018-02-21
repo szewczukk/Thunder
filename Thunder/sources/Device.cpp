@@ -51,6 +51,8 @@ namespace thunder
 		sceneManager = std::shared_ptr<SceneManager>(new SceneManager(width, height));
 		sceneManager->getRootNode()->setSceneManager(sceneManager);
 
+		camera = sceneManager->getCamera();
+
 		glEnable(GL_DEPTH_TEST);
 		glDepthFunc(GL_LESS);
 	}
@@ -87,5 +89,35 @@ namespace thunder
 	void Device::render()
 	{
 		SDL_GL_SwapWindow(window);
+	}
+
+
+	int Device::run()
+	{
+		float now = 0, last = 0, delta = 0;
+
+		bool quit = false;
+		while (!quit)
+		{
+			now = SDL_GetTicks();
+			delta = now - last;
+			last = now;
+
+			while (eventHandler->pollEvents())
+			{
+				if (eventHandler->windowState())
+					quit = true;
+			}
+
+			update(delta);
+
+			clear(0.1f, 0.2f, 0.2f);
+
+			sceneManager->drawAll();
+
+			render();
+		}
+
+		return 0;
 	}
 }

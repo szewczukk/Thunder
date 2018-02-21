@@ -24,6 +24,7 @@
 
 namespace thunder
 {
+	class Camera;
 	class EventHandler;
 	class SceneManager;
 	/*!
@@ -65,11 +66,16 @@ namespace thunder
 			Swapping buffers, rendering all data
 		*/
 		void render();
-	private:
+
+		virtual void update(const float & deltaTime) = 0;
+
+		int run();
+	protected:
 		SDL_Window * window;
 		SDL_GLContext context;
 
 		std::shared_ptr<SceneManager> sceneManager;
 		std::shared_ptr<EventHandler> eventHandler;
+		std::shared_ptr<Camera> camera;
 	};
 }
