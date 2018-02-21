@@ -12,6 +12,8 @@
 
 using namespace thunder;
 
+typedef std::shared_ptr<SceneNode> SceneNodePtr;
+
 class Game : public Device
 {
 public:
@@ -48,9 +50,9 @@ public:
 			monkey->move({ deltaTime / 50, 0, 0 });
 	}
 protected:
-	std::shared_ptr<SceneNode> monkey;
-	std::shared_ptr<SceneNode> bunny;
-	std::shared_ptr<SceneNode> light;
+	SceneNodePtr monkey;
+	SceneNodePtr bunny;
+	SceneNodePtr light;
 };
 
 int main()
