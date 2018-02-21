@@ -1,14 +1,12 @@
 #include <Thunder/Device.hpp>
-#include <Thunder/EventHandler.hpp>
-#include <Thunder/SceneManager.hpp>
-#include <Thunder/SceneNode.hpp>
-#include <Thunder/NodeComponent.hpp>
-#include <Thunder/Mesh.hpp>
-#include <Thunder/Model.hpp>
-#include <Thunder/Camera.hpp>
-#include <Thunder/ShaderProgram.hpp>
+
 #include <Thunder/Light.hpp>
+#include <Thunder/Camera.hpp>
+#include <Thunder/SceneNode.hpp>
 #include <Thunder/TexturedModel.hpp>
+
+#include <Thunder/SceneManager.hpp>
+#include <Thunder/EventHandler.hpp>
 
 #undef main
 
@@ -25,12 +23,10 @@ public:
 	{
 		monkey->appendObject<TexturedModel>("res/monkey.obj", "res/texture.png");
 		bunny->appendObject<TexturedModel>("res/bunny.obj", "res/texture.png");
-
-		camera->setPosition({ 0, 0, 10 });
-	
-		light->setPosition({ -2, -2, 2 });
 		light->appendObject<Light>(glm::vec3(1, 1, 1), 0.001);
 
+		camera->setPosition({ 0, 0, 10 });
+		light->setPosition({ -2, -2, 2 });
 		monkey->setPosition({ 1, 0, 0 });
 		bunny->setPosition({ -1, -2, -5 });
 	};
