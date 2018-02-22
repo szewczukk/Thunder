@@ -18,6 +18,8 @@
 
 #include "../include/Thunder/Model.hpp"
 
+#include "../include/Thunder/TexturedModel.hpp"
+
 #include <assert.h>
 #include <fstream>
 #include <sstream>
@@ -41,6 +43,7 @@ namespace thunder
 	};
 
 	Model::Model(const std::string & path)
+		:modelPath(path)
 	{
 		/*
 			std::vector<glm::vec3> temp_vertices;
@@ -206,48 +209,57 @@ namespace thunder
 		indices.clear();
 		vertices.clear();
 		verticesIndex.clear();*/
-
-		std::vector<glm::vec3> vertices;
-		std::vector<glm::vec3> normals;
-		std::vector<glm::vec2> uvs;
-		std::vector<unsigned int> indices;
-
-		Assimp::Importer importer;
-		const aiScene * scene = importer.ReadFile(path, 0);
-		const aiMesh * aMesh = scene->mMeshes[0];
-
-		for (int i = 0; i < aMesh->mNumVertices; i++)
+		
+		if (path != "")
 		{
-			vertices.push_back(glm::vec3(aMesh->mVertices[i].x, aMesh->mVertices[i].y, aMesh->mVertices[i].z));
+			std::vector<glm::vec3> vertices;
+			std::vector<glm::vec3> normals;
+			std::vector<glm::vec2> uvs;
+			std::vector<unsigned int> indices;
+
+			Assimp::Importer importer;
+			const aiScene * scene = importer.ReadFile(path, 0);
+			const aiMesh * aMesh = scene->mMeshes[0];
+
+			for (int i = 0; i < aMesh->mNumVertices; i++)
+			{
+				vertices.push_back(glm::vec3(aMesh->mVertices[i].x, aMesh->mVertices[i].y, aMesh->mVertices[i].z));
+			}
+
+			for (int i = 0; i < aMesh->mNumVertices; i++)
+			{
+				normals.push_back(glm::vec3(aMesh->mNormals[i].x, aMesh->mNormals[i].y, aMesh->mNormals[i].z));
+			}
+
+			for (int i = 0; i < aMesh->mNumVertices; i++)
+			{
+				uvs.push_back(glm::vec2(aMesh->mTextureCoords[0][i].x, aMesh->mTextureCoords[0][i].y));
+			}
+
+			for (int i = 0; i < aMesh->mNumFaces; i++)
+			{
+				indices.push_back(aMesh->mFaces[i].mIndices[0]);
+				indices.push_back(aMesh->mFaces[i].mIndices[1]);
+				indices.push_back(aMesh->mFaces[i].mIndices[2]);
+			}
+
+			mesh = new Mesh(vertices, normals, uvs, indices);
+
+			vertices.clear();
+			normals.clear();
+			indices.clear();
 		}
-
-		for (int i = 0; i < aMesh->mNumVertices; i++)
-		{
-			normals.push_back(glm::vec3(aMesh->mNormals[i].x, aMesh->mNormals[i].y, aMesh->mNormals[i].z));
-		}
-
-		for (int i = 0; i < aMesh->mNumVertices; i++)
-		{
-			uvs.push_back(glm::vec2(aMesh->mTextureCoords[0][i].x, aMesh->mTextureCoords[0][i].y));
-		}
-
-		for (int i = 0; i < aMesh->mNumFaces; i++)
-		{
-			indices.push_back(aMesh->mFaces[i].mIndices[0]);
-			indices.push_back(aMesh->mFaces[i].mIndices[1]);
-			indices.push_back(aMesh->mFaces[i].mIndices[2]);
-		}
-
-		mesh = new Mesh(vertices, normals, uvs, indices);
-
-		vertices.clear();
-		normals.clear();
-		indices.clear();
 	}
 
 
 	void Model::draw()
 	{
 		mesh->draw();
+	}
+
+
+	TexturedModel Model::convertToTexturedModel(const std::string & texturePath)
+	{
+		return TexturedModel(modelPath, texturePath);
 	}
 }

@@ -109,9 +109,9 @@ namespace thunder
 					quit = true;
 			}
 
-			update(delta);
-
 			clear(0.1f, 0.2f, 0.2f);
+
+			update(delta);
 
 			sceneManager->drawAll();
 

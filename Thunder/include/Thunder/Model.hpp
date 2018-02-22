@@ -23,6 +23,7 @@
 
 namespace thunder
 {
+	class TexturedModel;
 	/*!
 		Represents Model loaded from external file 
 	*/
@@ -36,10 +37,17 @@ namespace thunder
 		*/
 		Model(const std::string & path);
 		/*!
+			Converting untextured model to textured model
+			@param texturePath Path to texture
+			@return Converted model
+		*/
+		TexturedModel convertToTexturedModel(const std::string & texturePath);
+		/*!
 			Drawing model
 		*/
 		virtual void draw() override;
 	private:
 		Mesh * mesh;
+		std::string modelPath;
 	};
 }

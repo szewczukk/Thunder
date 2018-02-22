@@ -52,6 +52,7 @@ namespace thunder
 	void SceneNode::draw(std::shared_ptr<ShaderProgram> shaderProgram)
 	{
 		shaderProgram->setUniformMatrix("uTransform", getMatrix());
+		shaderProgram->setIntegerUniform("uIsTextured", 0);
 		for (auto & obj : objects)
 		{
 			obj.second->draw();

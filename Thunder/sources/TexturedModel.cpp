@@ -20,6 +20,9 @@
 
 #include "../include/Thunder/Texture.hpp"
 #include "../include/Thunder/Model.hpp"
+#include "../include/Thunder/SceneNode.hpp"
+#include "../include/Thunder/SceneManager.hpp"
+#include "../include/Thunder/ShaderProgram.hpp"
 
 namespace thunder
 {
@@ -31,6 +34,7 @@ namespace thunder
 
 	void TexturedModel::draw()
 	{
+		getParent()->getSceneManager()->getShaderProgram()->setIntegerUniform("uIsTextured", 1);
 		texture->bind();
 		model->draw();
 	}

@@ -4,9 +4,11 @@
 #include <Thunder/Camera.hpp>
 #include <Thunder/SceneNode.hpp>
 #include <Thunder/TexturedModel.hpp>
+#include <Thunder/Model.hpp>
 
 #include <Thunder/SceneManager.hpp>
 #include <Thunder/EventHandler.hpp>
+#include <Thunder/ShaderProgram.hpp>
 
 #undef main
 
@@ -24,14 +26,14 @@ public:
 		light(sceneManager->getRootNode()->createChildNode("light"))
 	{
 		monkey->appendObject<TexturedModel>("res/monkey.obj", "res/texture.png");
-		bunny->appendObject<TexturedModel>("res/bunny.obj", "res/texture.png");
+		bunny->appendObject<Model>("res/bunny.obj");
 		light->appendObject<Light>(glm::vec3(1, 1, 1), 0.001);
 
 		camera->setPosition({ 0, 0, 10 });
 		light->setPosition({ -2, -2, 2 });
 		monkey->setPosition({ 1, 0, 0 });
 		bunny->setPosition({ -1, -2, -5 });
-	};
+	}
 	
 	virtual void update(const float & deltaTime) override
 	{
@@ -48,6 +50,10 @@ public:
 			monkey->move({ -deltaTime / 50, 0, 0 });
 		if (eventHandler->isKeyPressed(SDL_SCANCODE_RIGHT))
 			monkey->move({ deltaTime / 50, 0, 0 });
+		if (eventHandler->isKeyPressed(SDL_SCANCODE_UP))
+			monkey->move({ 0, 0, -deltaTime / 50 });
+		if (eventHandler->isKeyPressed(SDL_SCANCODE_DOWN))
+			monkey->move({ 0, 0, deltaTime / 50 });
 	}
 protected:
 	SceneNodePtr monkey;
